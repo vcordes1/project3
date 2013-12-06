@@ -109,13 +109,12 @@ int main()
 			}
 		case 13:
 			{
-			cout << "P(A) = { ";
-			myList = myList -> power(myList);
+			myList -> power();
 			break;
 			}
 		case 14:
 			{
-			myList -> permu();
+			myList -> permu(input);
 			break;
 			}
 		case 15:

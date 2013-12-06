@@ -3,70 +3,54 @@
 
 using namespace std;
 
-void List :: permu()
+void List :: permu(int check)
 {
-	List *copy = new List();
-	List *copy2 = new List();
-	copy = this -> copyList();
-	copy2 = this -> copyList();
-	Node *tmp, *tmp2, *tmp3, *tmp4;
+	int count = 0;
 
+	//initilizations and declarations
+	List *copy = new List();
+	copy = this -> copyList();
+	Node *tmp, *tmp2;
 	tmp = copy -> start;
 	tmp2 = this -> getStart() -> getNext();
-	tmp3 = copy2 -> getStart();
-	tmp4 = this -> getStart();
 
-	while(tmp4 != NULL)
-	{
-		while(tmp2 != NULL)
-		{
-			tmp = tmp -> getNext();
-			copy -> getNode(tmp);
-			copy -> insert(copy -> getStart() -> getNext(), tmp);
-			copy -> displaySet();
-			tmp2 = tmp2 -> getNext();
-		}
-		tmp3 = tmp3 -> getNext();
-		copy2 -> getNode(tmp3);
-		copy2 -> insert(copy2 -> getStart(), tmp3);
-		copy = copy2 -> copyList();
-		tmp = copy -> getStart();
-		tmp2 = this -> getStart() -> getNext();
-		tmp4 = tmp4 -> getNext();
-	}
-
-
-/*	while(tmp2 != NULL)
-	{
-		tmp = tmp -> getNext();
-		while(count < check)
-		{
-			if(tmp -> getNext() != NULL)
-			{
-				tmp = tmp -> getNext();
-			}
-			count++;
-		}
-		this -> getNode(tmp);
-		this -> insert(this -> start -> getNext(), tmp);
-		this -> displaySet();
-		tmp2 = tmp2 -> getNext();
-		tmp = this -> start;
-		check++;
-		count = 0;
-	}
-
-
-
-
-/*	tmp = tmp2 = copy -> start;
+	//loops to swap the elements after the first element
 	while(tmp2 != NULL)
 	{
-		tmp = tmp -> getPrev();
-		this -> getNode(tmp);
-		this -> insert(this -> start, tmp);
-		tmp = tmp -> getPrev();
-		tmp2 - tmp2 -> getPrev();
+		tmp = tmp -> getNext();
+		copy -> getNode(tmp);
+		copy -> insert(copy -> getStart() -> getNext(), tmp);
+		copy -> displaySet();
+		tmp2 = tmp2 -> getNext();
 	}
-*/
+
+	//reassigns copy and tmp
+	tmp = this -> getStart();
+	copy = this -> copyList();
+
+	//loops to set the place of tmp
+	while(count <= check)
+	{
+		if(tmp -> getNext() != NULL)
+		{
+		tmp = tmp -> getNext();
+		count++;
+		}
+		else
+		{
+		count++;
+		}
+	}
+
+	//places the second element of the set in the first position
+	this -> getNode(tmp);
+	this -> insert(this -> getStart(), tmp);
+
+	//increment check and recall the function
+	check++;
+	if (check < ((this -> qty) /2))
+	{
+	this -> permu(check);
+	}
+
 }

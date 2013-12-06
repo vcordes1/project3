@@ -10,7 +10,6 @@ class List {
 		void append(Node *, Node *);
 		Node *getNode(Node *);
 		Node *getLocation(Node *);
-		void haha();
 		void displayf();
 		void displayb();
 		int  getQuantity();
@@ -25,8 +24,8 @@ class List {
 		void displaySet();
 		void sort();
 		bool search(int input);
-		void power();
-		void permu(int check);
+		List *power(List *);
+		void permu();
 		void surprise();
 
 	private:

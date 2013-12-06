@@ -3,8 +3,9 @@
 
 using namespace std;
 
-List *List :: power(List *)
+void List :: power()
 {
+	//declarations...lots of um
 	List *copy = new List();
 	copy = this -> copyList();
 	Node *tmp, *tmp2, *tmp3, *tmp4;
@@ -14,12 +15,18 @@ List *List :: power(List *)
 	tmp4 = tmp2 -> getNext();
 	tmp3 = copy -> start;
 
+	//begins printing the set
+	cout << "P(A) = { ";
 
+	//outer loop controls and prints all singles
 	while(tmp3 != NULL)
 	{
+		//prints out the in-betweens
 		while (tmp2 != NULL)
 		{
 			cout << "{ " << tmp -> getValue() << ", ";
+
+			//all the elements after tmp
 			while (tmp2 != NULL)
 			{
 				cout << tmp2 -> getValue() << ", ";
@@ -41,31 +48,8 @@ List *List :: power(List *)
 		tmp3 = tmp3 -> getNext();
 	}
 
-/*	tmp = copy -> getEnd() -> getPrev();
-	tmp2 = tmp -> getPrev();
-	while(tmp2 != NULL)
-	{
-		cout << "{ " << tmp -> getValue() << ", ";
-		while (tmp2 != NULL)
-		{
-			cout << tmp2 -> getValue() << ", ";
-			tmp2 = tmp2 -> getPrev();
-		}
-		cout << "}, ";
-		tmp = tmp -> getPrev();
-		tmp2 = tmp -> getPrev();
-	}
-
-/*	tmp = this -> getEnd();
-	while((tmp != this -> getStart()) && tmp2 != NULL)
-	{
-		tmp = this -> getNode(this -> getStart());
-		this -> power(this);
-	}
-*/
 
 
 	//empty set
 	cout << "NULL }" << endl;
-	return (copy);
 }

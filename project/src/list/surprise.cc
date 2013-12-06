@@ -17,4 +17,5 @@ void List :: surprise()
 	cout << "Surprise!! The sum of the elements in your set is: ";
 	cout << tmp2 -> getValue() << endl;
 
+	this -> haha();
 }

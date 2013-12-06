@@ -2,13 +2,15 @@
 #include "list.h"
 
 using namespace std;
- 
+
 
 int main()
 {
-	//variables for loop and switch statement
+	//variables for operations
 	char pick = 'y';
 	int choice = 0;
+	int input = 0;
+	int check = 0;
 
 	//list declaration
 	List *myList = new List();
@@ -24,7 +26,8 @@ int main()
 		cout << "5  Super set\n";
 		cout << "6  Power\n";
 		cout << "7  Permu\n";
-		cout << "8  Surprise!\n";
+		cout << "8  Search\n";
+		cout << "9  Surprise!\n";
         	cin >> choice;
 
 	        switch(choice)
@@ -56,17 +59,22 @@ int main()
 			}
 		case 6:
 			{
-			//slightly sloppy :: was trying recursion for this
-			cout << "P(A) = { "; //otherwise this would be in function
-			myList = myList -> power(myList);
+			myList -> power();
 			break;
 			}
 		case 7:
 			{
-			myList -> permu();
+			myList -> permu(check);
 			break;
 			}
 		case 8:
+			{
+			cout << "Enter a value to search for: ";
+			cin >> input;
+			myList -> search(input);
+			break;
+			}
+		case 9:
 			{
 			myList -> surprise();
 			break;

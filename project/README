@@ -1,0 +1,20 @@
+Vincent Cordes
+Fall 2013
+
+To the reader,
+
+	This is a combined project for discrete mathematics, and data structures.
+
+	I will say that most of the files are self explanitory, those that are not
+obvious will be documented within the file itself.  Feel free to look around and
+enjoy the experience.
+
+	The functions for discrete project 3 are in the "list.h" header file and are 
+commented as such.  The testing directory will have a file named setTest.cc which 
+will be the runnable for said project.
+
+	Also contained within the testing directory will be listTest.cc,
+stackTest.cc, and queTest.cc which are the primary runnables for the data 
+structures project.
+
+best regards

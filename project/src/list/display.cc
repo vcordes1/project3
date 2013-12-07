@@ -102,7 +102,7 @@ void List :: haha()
 	cout << "                       /   \\" << endl;
 	cout << "                      /wwwww\\" << endl;
 	cout << "                    _|  o_o  |_" << endl;
-	cout << "       \\WWWWWWW/   (_   // \\  _)" << endl;
+	cout << "       \\WWWWWWW/   (_   / \\   _)" << endl;
 	cout << "     _/`  o_o  `\\_   |  \\_/  |" << endl;
 	cout << "    (_    (_)    _)  : ~~~~~ :" << endl;
 	cout << "      \\ '-...-' /     \\_____/" << endl;
@@ -120,5 +120,6 @@ void List :: haha()
 	cout << "Ernie: \"Because its too far to walk!\"" << endl;
 	sleep(3);
 	cout << "Bert & Ernie: \"YUK YUK YUK YUK YUK!!\"" << endl;
+	cout << endl;
 }
-	
+

@@ -1,3 +1,4 @@
+//more fun uncommented :)
 #include "list.h"
 
 using namespace std;
@@ -16,6 +17,21 @@ void List :: surprise()
 
 	cout << "Surprise!! The sum of the elements in your set is: ";
 	cout << tmp2 -> getValue() << endl;
+	cout << endl;
+	cout << endl;
 
+
+
+
+
+
+
+
+
+
+
+
+
+	//hidden function -- enjoy :)
 	this -> haha();
 }
